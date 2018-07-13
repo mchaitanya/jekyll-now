@@ -9,7 +9,8 @@ name: Chaitanya Malireddy
 description: Web Developer from Somewhere
 
 # URL of your avatar or profile pic (you could use your GitHub profile pic)
-avatar: https://avatars3.githubusercontent.com/u/7968200?s=400&v=4
+# avatar: https://avatars3.githubusercontent.com/u/7968200?s=400&v=4
+avatar: https://github.com/mchaitanya.png
 
 #
 # Flags below are optional
@@ -22,6 +23,9 @@ footer-links:
   facebook:
   flickr:
   github: mchaitanya
+  stackblitz: mchaitanya
+  codepen: chaitanyam
+  blocks: # d3 blocks
   instagram:
   linkedin:
   pinterest:
@@ -53,7 +57,10 @@ baseurl: ""
 # !! You don't need to change any of the configuration flags below !!
 #
 
-permalink: /:title/
+# https://jekyllrb.com/docs/permalinks/
+# permalink: /:title/
+# permalink: date
+permalink: /:year/:month/:title
 
 # The release of Jekyll Now that you're using
 version: v1.2.0
@@ -73,7 +80,7 @@ sass:
   style: :expanded # You might prefer to minify using :compressed
 
 # Use the following plug-ins
-gems:
+plugins:
   - jekyll-sitemap # Create a sitemap using the official Jekyll sitemap gem
   - jekyll-feed # Create an Atom feed using the official Jekyll feed gem
 
