@@ -4,4 +4,4 @@ This is my personal GitHub pages site:
 
 ---
 
-This site is based off barryclark's jekyll-now project starter template. Check it out [here]((https://github.com/barryclark/jekyll-now/))!
+This site is based off barryclark's jekyll-now project starter template. Check it out [here](https://github.com/barryclark/jekyll-now/)!
