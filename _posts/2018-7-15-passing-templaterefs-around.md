@@ -5,7 +5,7 @@ title: Passing TemplateRefs Around in Angular
 
 In our Angular apps, we pass data from one component to another all the time. We can facilitate the exchange through a shared service or just use simple input/output bindings if the components are in a direct parent-child relationship. Most often, the data are just plain JavaScript primitives/objects. 
 
-But there are interesing use cases when we might want to pass a template/chunk of HTML from one component to another. This is a pretty powerful pattern: we can define the general structure of common UI component and switch in/out dynamic content based on our app's logic. 
+But there are interesting use cases when we might want to pass a template/chunk of HTML from one component to another. This is a pretty powerful pattern: we can define the general structure of a common UI component and switch in/out dynamic content based on our app's logic. 
 
 Let's explore an example built with the [ng-bootstrap package](https://ng-bootstrap.github.io/). We have a set of reusable modal components to display warnings, prompts etc. and any component in the app can launch one of these modals and insert their custom content into the modal body.
 
@@ -35,7 +35,7 @@ In the `WarningModalComponent`, we can embed this templateRef with the convenien
 <ng-container *ngTemplateOutlet="tmpl"></ng-container>
 ```
 
-Now, the templateRefs keep all our bindings intact. The bindings are evaluated in the context of the original component instance, where they are defined. For example, the string interpolation {% raw %}`{{ cmpName }}`{% endraw %} in `Example1Component`'s template evaluates to 'example1' and not 'warning modal' as defined in the `WarningModalComponent`. Note that the styling defined in `Example2Component` (`.special { color: orange }`) is applied to its template even though it is instantiated in the `WarningModalComponent`. 
+Now, the templateRefs keep all our bindings intact. The bindings are evaluated in the context of the original component instance, where they are defined. For example, the string interpolation {% raw %}`{{ cmpName }}`{% endraw %} in `Example1Component`'s template evaluates to _'example1'_ and not _'warning modal'_ as defined in the `WarningModalComponent`. Note that the styling defined in `Example2Component` (`.special { color: orange }`) is applied to its template even though it is instantiated in the `WarningModalComponent`. 
 
 The fact that the template maintains a connection to the original component state can be leveraged in interesting ways. In `Example3Component`, we set up two-way binding to the `fontSize` and `fontColor` properties. We can now bring up the settings modal, adjust the options there and instantly see the changes applied to the text. 
 
